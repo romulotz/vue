@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>Meu nome é: {{ player.nome }}</p>
+    <p>Eu tenho {{ player.idade }} anos</p>
+    <p>Estou aprendendo Vue passando raiva.</p>
+  </div>
+  <script>
+    const { createApp, watchEffect } = Vue;
+
+    const app = createApp({
+      data() {
+        return {
+          player: {
+            nome: 'Rômulo',
+            idade: 29
+          }
+        };
+      },
+      mounted() {
+        watchEffect(() => {
+          console.log(`idade mudou para ${this.player.idade}`);
+        });
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+</html>

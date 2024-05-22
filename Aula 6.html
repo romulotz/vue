@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app"> 
+    <h2>Estou aprendendo</h2>
+    <button v-on:click="texto('aplicativos')">aplicativos</button>
+    <button v-on:click="texto('websites')">websites</button>
+    <button v-on:click="texto('jogos')">jogos</button>
+    <button v-on:click="texto('planilhas')">excel</button>
+    <br> <br>
+    {{grade}}
+  </div>
+  <script>
+    const { createApp } = Vue;
+
+    const app = createApp({
+      data() {
+        return {
+          grade: ""
+        };        
+      },
+      methods:{
+        texto: function(grade){
+          this.grade = "estou aprendendo a programar" + grade;
+        }        
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="ad">
+    <div v-if="nota>=60">Aprovado</div>
+    <div v-else>Reprovado</div>
+  </div>
+  <script>
+    const { createApp, watchEffect } = Vue;
+
+    const app = createApp({
+      data() {
+        return {
+          nota: 59,
+        };
+      },
+    });
+
+    app.mount('#ad');
+  </script>
+</body>
+</html>
